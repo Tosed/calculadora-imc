@@ -3,14 +3,11 @@ package com.tosed.forcalculate
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.alturaEDT
 import kotlinx.android.synthetic.main.activity_main.calcularBTN
 import kotlinx.android.synthetic.main.activity_main.pesoEDT
 import kotlinx.android.synthetic.main.activity_tela_bmi.*
-import java.util.*
 
 class tela_bmi : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
