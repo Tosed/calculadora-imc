@@ -1,14 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PerguntaFragment">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/azul_claro_home"
+        tools:ignore="NotSibling">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/iv_image_pergunta"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_max_image"
+            android:src="@drawable/imagem_normal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@null" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputTextLayoutPeso"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_horizontal"
+            app:startIconDrawable="@drawable/icon_balance"
+            app:counterEnabled="true"
+            app:counterMaxLength="5"
+            android:hint="@string/peso"
+            app:helperText="@string/required"
+            app:helperTextTextColor="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_image_pergunta">
+
+            <br.com.sapereaude.maskedEditText.MaskedEditText
+                android:id="@+id/pesoEDT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:allowed_chars="1234567890"
+                app:mask="##.##"
+                android:inputType="numberDecimal"
+                android:maxLength="5"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputTextLayoutAltura"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:startIconDrawable="@drawable/icon_height1"
+            android:hint="@string/altura"
+            app:errorEnabled="true"
+            app:helperText="@string/required"
+            app:helperTextTextColor="@color/red"
+            app:counterEnabled="true"
+            app:counterMaxLength="4"
+
+            android:layout_margin="@dimen/margin_horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputTextLayoutPeso"
+            >
+
+            <br.com.sapereaude.maskedEditText.MaskedEditText
+                android:id="@+id/alturaEDT"
+                android:maxLength="4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                app:allowed_chars="1234567890"
+                app:mask="#.##" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_calcular"
+            android:text="@string/btn_calcular"
+            app:layout_constraintTop_toBottomOf="@id/inputTextLayoutPeso"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.662"
+            style="@style/btn_style" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
