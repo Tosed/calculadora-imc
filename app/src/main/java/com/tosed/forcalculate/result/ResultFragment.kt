@@ -24,13 +24,9 @@ class ResultFragment : Fragment() {
     ): View? {
        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_result, container, false)
 
-        sharedViewModel.imc.observe(viewLifecycleOwner, { newIMC ->
-            binding.tvResultadoPeso.text = "Seu IMC é: %.2f".format(newIMC)
-        })
+        binding.resultViewModel = sharedViewModel
+        binding.lifecycleOwner = this
 
-        sharedViewModel.ranking.observe(viewLifecycleOwner, { newRanking ->
-            binding.tvRank.text = "Classificação: $newRanking"
-        })
 
         /*arguments?.let {
           val args = ResultFragmentArgs.fromBundle(it)

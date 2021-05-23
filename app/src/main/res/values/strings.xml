@@ -9,4 +9,6 @@
     <string name="btn_home_start">Vamos lá</string>
     <string name="btn_calcular">Calcular</string>
     <string name="required">Obrigatório*</string>
+    <string name="text_imc">Seu IMC é: %s</string>
+    <string name="text_class">Classificação: %s</string>
 </resources>

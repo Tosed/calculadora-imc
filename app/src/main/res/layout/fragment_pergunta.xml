@@ -42,7 +42,8 @@
                 app:allowed_chars="1234567890"
                 app:mask="##.##"
                 android:inputType="numberDecimal"
-                android:maxLength="5"/>
+                android:maxLength="5"
+                />
 
         </com.google.android.material.textfield.TextInputLayout>
 

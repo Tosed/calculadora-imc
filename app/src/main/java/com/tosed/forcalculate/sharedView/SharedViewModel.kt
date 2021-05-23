@@ -2,6 +2,7 @@ package com.tosed.forcalculate.sharedView
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 
 class SharedViewModel: ViewModel() {
@@ -12,6 +13,9 @@ class SharedViewModel: ViewModel() {
     private val _ranking =  MutableLiveData<String>()
     val ranking: LiveData<String> = _ranking
 
+    val rounded = Transformations.map(imc) { finalFloat ->
+        String.format("%.2f", finalFloat)
+    }
 
     fun calculate(height: String, weight: String){
         val peso = weight.toFloat()

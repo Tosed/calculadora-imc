@@ -29,7 +29,7 @@ class QuestionFragment : Fragment() {
             setListeners()
         }
 
-       sharedViewModel.imc.observe(viewLifecycleOwner, { newIMC ->
+       sharedViewModel.imc.observe(viewLifecycleOwner, {
            resultFinished()
        })
         return binding.root
